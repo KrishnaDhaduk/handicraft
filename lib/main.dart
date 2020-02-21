@@ -1,3 +1,74 @@
+import 'package:flutter/material.dart';
+import 'package:handicraft/login.dart';
+
+import 'avterGlow.dart';
+
+void main() => runApp(MyApp());
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'durar hr ',
+      home: design(),
+    );
+  }
+}
+
+class design extends StatefulWidget {
+  @override
+  _designState createState() => _designState();
+}
+
+class _designState extends State<design> {
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    Future.delayed(
+        Duration(seconds: 6),
+        () => Navigator.push(
+            context, MaterialPageRoute(builder: (context) => Login())));
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        backgroundColor: Color(0xffE30031),
+        body: SafeArea(
+            child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: <Widget>[
+            Container(
+              child: avterGlow1,
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left: 155.0, top: 40.0),
+              child: Text(
+                "Durar HR",
+                style: TextStyle(
+                    fontSize: 30,
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left: 130.0, top: 5.0),
+              child: Text(
+                "The Complete HR Solution",
+                style: TextStyle(
+                  fontSize: 15,
+                  color: Color(0xffF1F1F1),
+                ),
+              ),
+            ),
+          ],
+        )));
+  }
+}
+
+//-----------------------news api-----------------------------------
 //import 'dart:convert';
 
 //import 'package:flutter/material.dart';
@@ -6,16 +77,10 @@
 //
 //void main() => runApp(MyApp());
 //
-//class MyApp extends StatefulWidget {
-//  @override
-//  _MyAppState createState() => _MyAppState();
-//}
-//
-//class _MyAppState extends State<MyApp> {
+//class MyApp extends StatelessWidget {
 //  Future<List> getUser() async {
 //    http.Response response = await http.get(
 //        "https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=60a4fca097174660b6a485a6beae35ab");
-////60a4fc4660b6a485a6beae35aba09717
 //    var data = jsonDecode(response.body);
 //    return data['articles'];
 //  }
@@ -122,11 +187,11 @@
 //            FlatButton(
 //              child: Text("read more"),
 //              onPressed: () {
-//                Navigator.pushReplacement(
+//                Navigator.push(
 //                    context,
 //                    MaterialPageRoute(
 //                        builder: (context) => Demo(
-////                              newsView: '${snapshot.data[index]['content']}',
+//                              newsView: widget.more,
 //                            )));
 ////                print("read more clicked");
 ////                widget.more;
@@ -146,7 +211,7 @@
 //  _DemoState createState() => _DemoState();
 //}
 //
-//class _DemoState extends State {
+//class _DemoState extends State<Demo> {
 //  @override
 //  Widget build(BuildContext context) {
 //    return Scaffold(
@@ -155,7 +220,7 @@
 //        Container(
 //          child: Padding(
 //            padding: const EdgeInsets.only(top: 50.0),
-//            child: Text("null"),
+//            child: Text(widget.newsView),
 //          ),
 //        ),
 //        Padding(
@@ -168,8 +233,7 @@
 //                child: Center(child: Text("Home")),
 //                color: Colors.cyan,
 //                onPressed: () {
-//                  Navigator.pushReplacement(context,
-//                      MaterialPageRoute(builder: (context) => MyApp()));
+//                  Navigator.pop(context);
 //                },
 //              ),
 //            ),
