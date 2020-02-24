@@ -1,5 +1,6 @@
 //------------------ DURAR HR login & Splash screen ----------------------
 import 'package:flutter/material.dart';
+import 'package:handicraft/main.dart';
 
 class Login extends StatelessWidget {
   @override
@@ -12,7 +13,12 @@ class Login extends StatelessWidget {
           children: <Widget>[
             Row(
               children: <Widget>[
-                IconButton(icon: Icon(Icons.arrow_back_ios), onPressed: null),
+                IconButton(
+                    icon: Icon(Icons.arrow_back_ios),
+                    onPressed: () {
+                      Navigator.pushReplacement(context,
+                          MaterialPageRoute(builder: (context) => MyApp()));
+                    }),
                 Text("Back"),
               ],
             ),
