@@ -18,6 +18,7 @@ Widget avterGlow1 = AvatarGlow(
         backgroundImage: NetworkImage(
             "https://tse3.mm.bing.net/th?id=OIP.inxkFQFyNH2u1vJ_rbL8vgAAAA&pid=Api&P=0&w=212&h=181")),
   ),
+  //
   shape: BoxShape.circle,
   animate: true,
   curve: Curves.fastOutSlowIn,
