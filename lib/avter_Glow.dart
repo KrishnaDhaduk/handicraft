@@ -16,7 +16,7 @@ class AvatarGlow extends StatefulWidget {
   final bool showTwoGlows;
   final Color glowColor;
   final Duration startDelay;
-
+//
   const AvatarGlow({
     Key key,
     @required this.child,
